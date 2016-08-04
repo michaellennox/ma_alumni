@@ -1,0 +1,8 @@
+[submodule "ma_alumni_api"]
+	path = ma_alumni_api
+	url = git@github.com:michaellennox/ma_alumni_api.git
+	ignore = all
+[submodule "ma_alumni_ui"]
+	path = ma_alumni_ui
+	url = git@github.com:michaellennox/ma_alumni_ui.git
+	ignore = all
