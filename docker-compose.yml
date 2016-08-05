@@ -1,0 +1,28 @@
+version: "2"
+
+services:
+  api:
+    build: ./ma_alumni_api
+    command: mix phoenix.server
+    ports:
+      - "4000:4000"
+    depends_on:
+      - api_db
+    volumes_from:
+      - api_data
+
+  api_db:
+    image: postgres:9.5.3
+    ports:
+      - "5432"
+    volumes_from:
+      - api_data
+
+  api_data:
+    image: busybox
+    volumes:
+      - api_postgres:/var/lib/postgresql/data
+      - ./ma_alumni_api:/usr/src/app
+
+volumes:
+  api_postgres:

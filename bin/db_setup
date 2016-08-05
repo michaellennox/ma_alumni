@@ -1,0 +1,4 @@
+printf "== Running DB setup for api ==\n"
+printf "==============================\n\n"
+
+docker-compose run api mix ecto.create && mix ecto.migrate
