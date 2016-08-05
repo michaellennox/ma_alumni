@@ -17,14 +17,6 @@ git pull origin development
 
 cd ..
 
-printf "== Alumni API ==\n"
-
-cd ./ma_alumni_ui
-git checkout development
-git pull origin development
-
-cd ..
-
 printf "== Running the docker build ==\n"
 printf "==============================\n\n"
 
