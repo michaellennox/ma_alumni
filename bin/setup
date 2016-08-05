@@ -1,0 +1,31 @@
+#! /bin/bash
+
+printf "== Time to initialize those submodules ==\n"
+printf "=========================================\n\n"
+
+git submodule init && git submodule update
+
+
+printf "== Pulling up most up to date versions ==\n"
+printf "=========================================\n\n"
+
+printf "== Alumni API ==\n"
+
+cd ./ma_alumni_api
+git checkout development
+git pull origin development
+
+cd ..
+
+printf "== Alumni API ==\n"
+
+cd ./ma_alumni_ui
+git checkout development
+git pull origin development
+
+cd ..
+
+printf "== Running the docker build ==\n"
+printf "==============================\n\n"
+
+docker-compose build
